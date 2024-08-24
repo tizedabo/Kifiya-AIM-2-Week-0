@@ -5,9 +5,10 @@ import seaborn as sns
 import warnings as wr
 wr.filterwarnings('ignore')
 df = pd.read_csv("togo-dapaong_qc.csv")
-#print(df.head())
-#print(df.describe())
-#print(df.shape)
+print(df.head())
+
+print(df.describe())
+print(df.shape)
 print(df.isnull())
 print(df.isnull().sum())
 #Univariant Analysis
