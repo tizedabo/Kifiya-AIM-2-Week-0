@@ -25,7 +25,7 @@ import matplotlib.pyplot as plt
 # In[78]:
 
 
-data = pd.read_csv("benin-malanville.csv")
+data = pd.read_csv(benin-malanville.csv)
 
 
 # In[79]:
