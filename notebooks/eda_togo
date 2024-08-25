@@ -7,24 +7,19 @@ wr.filterwarnings('ignore')
 df = pd.read_csv("togo-dapaong_qc.csv")
 print(df.head())
 
-print(df.describe())
-print(df.shape)
-print(df.isnull())
+df.describe()
+
+#df.shape()
+
+df.isnull()
+#checking for null  values
 print(df.isnull().sum())
-#Univariant Analysis
-# univariate plots
-fig, ax=plt.subplots(1,2, figsize=(20, 6))
-sns.histplot(df['Precipitation'], ax=ax[0])
-ax[0].set_title("Precipitation")
-sns.histplot(df['TModB'], ax=ax[1])
-ax[1].set_title("TModB")
-plt.ylim(0, 2500)
-plt.show()
+df.dropna(axis='columns')
+df.nunique()
+#droping duplicate entries
+df.drop_duplicates()
+#checking for negetive value in GHI,DNI,DHI
+print((df[['GHI','DNI','DHI']]<0).sum())
 
-a4_dims = (20, 7)
-fig, axs = plt.subplots(ncols=3, figsize=a4_dims)
-sns.scatterplot(x="Precipitation", y="TModB", ax=axs[0], df=df)
-sns.scatterplot(x="Precipitation", y="TModB", ax=axs[1], df=df)
-sns.scatterplot(x="Precipitation", y="TModB", ax=axs[2], df=df)
 
-plt.show()
+
