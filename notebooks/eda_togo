@@ -14,12 +14,14 @@ df.describe()
 df.isnull()
 #checking for null  values
 print(df.isnull().sum())
-df.dropna(axis='columns')
+#df.dropna(axis='columns')
+df.drop(columns="Comments",axis=1)
 df.nunique()
 #droping duplicate entries
 df.drop_duplicates()
 #checking for negetive value in GHI,DNI,DHI
 print((df[['GHI','DNI','DHI']]<0).sum())
+df.head()
 
 
 
